@@ -5,7 +5,7 @@ const colorBtn = document.getElementById('color-choice');
 
 
 const startColor = '#000';
-const startSize = 16;
+const startSize = 40;
 let currentSize = startSize;
 let currentColor = startColor;
 
@@ -17,7 +17,7 @@ function makeGrid(size) {
     for (let i = 0; i < size * size; i++) {
         const gridElement = document.createElement('div')
         gridElement.classList.add('grid-elements')
-        gridElement.innerHTML = '.'
+        // gridElement.innerHTML = ''
         gridElement.addEventListener('mouseover', changeColor)
         gameGrid.appendChild(gridElement)
 
@@ -44,6 +44,6 @@ function clearGrid() {
   gameGrid.innerHTML = ''
   }
 
-  rainbowBtn.onclick = () => makeGrid(currentSize);
+  // rainbowBtn.onclick = () => makeGrid(currentSize);
   eraseBtn.onclick = () => reloadGrid();  
   colorBtn.onchange = (e) => setCurrentColor(e.target.value)
