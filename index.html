@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Paint a Sketch!</title>
+</head>
+<body>
+    <nav class="nav">
+        <form>
+            <label for="grid-size">Select a grid size</label>
+            <select name="grid-size" id="size-options">
+                <option value="16">16 x 16</option>
+                <option value="32">32 x 32</option>
+                <option value="64">64 x 64</option>
+            </select>  
+        </form>
+        <form>
+            <label for="color">Chose a color</label>
+            <input type="color" name="color-choice" id="color-choice">
+        </form>
+        <button id="erase-btn" class="btn">Erase</button>
+        <button id="rainbow-btn" class="btn">Rainbow Mode</button>
+        <a href="#" class="rainbow-button" alt="Button"></a>
+    </nav>
+    <main class="game-container">
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi inventore quos, qui perferendis blanditiis, doloribus necessitatibus rem nam distinctio libero unde quas placeat quae fugiat, facilis voluptatem. Architecto ut beatae illo explicabo id est voluptas tenetur doloribus natus fuga, non culpa voluptatibus quis voluptatem delectus! Natus magni quasi, nesciunt fuga temporibus nobis velit quas consequatur voluptate dolorum facere quibusdam vero animi, odit omnis hic doloribus pariatur fugit sunt libero eius. Commodi omnis quos odit magnam esse suscipit laborum libero rerum.</div>
+        <div id="grid" class="grid"></div>
+    </main>
+</body>
+</html>

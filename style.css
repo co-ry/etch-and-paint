@@ -1,0 +1,36 @@
+html{
+    margin: 0;
+    padding: 
+}
+
+body {
+    background-color: aquamarine;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#rainbow-btn {
+    background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+
+}
+
+.grid {
+    border: black;
+    display: grid;
+    }
+
+.grid-elements{
+    color: blueviolet;
+    background-color: chartreuse;
+    text-align: center;
+
+}
+
+.game-container{
+    display: flex;
+    flex-direction: row;
+}
