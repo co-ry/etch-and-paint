@@ -1,8 +1,13 @@
 const gameGrid = document.getElementById('grid');
-const rainbowBtn = document.querySelector('#rainbow-btn')
+const rainbowBtn = document.querySelector('#rainbow-btn');
+const eraseBtn = document.getElementById('erase-btn');
+const colorBtn = document.getElementById('color-choice');
 
-const startsize = 16
-let currentSize = startsize 
+
+const startColor = '#000';
+const startSize = 16;
+let currentSize = startSize;
+let currentColor = startColor;
 
 
 function makeGrid(size) {
@@ -12,7 +17,7 @@ function makeGrid(size) {
     for (let i = 0; i < size * size; i++) {
         const gridElement = document.createElement('div')
         gridElement.classList.add('grid-elements')
-        gridElement.innerHTML = i+1
+        gridElement.innerHTML = '.'
         gridElement.addEventListener('mouseover', changeColor)
         gameGrid.appendChild(gridElement)
 
@@ -21,18 +26,24 @@ function makeGrid(size) {
     }
 }
 
-rainbowBtn.onclick = () => makeGrid(currentSize);
 
-function changeColor(e){
-  e.target.style.backgroundColor = '#eee'
-  console.log(this.innerHTML)
+function setCurrentColor(newColor){
+   currentColor = newColor
 }
 
-// function reloadGrid() {
-//   clearGrid()
-//   makeGrid(currentSize)
-//   }
+function changeColor(e){
+  e.target.style.backgroundColor = currentColor
+}
 
-// function clearGrid() {
-//   gameGrid.innerHTML = ''
-//   }
+function reloadGrid() {
+  clearGrid()
+  makeGrid(currentSize)
+  }
+
+function clearGrid() {
+  gameGrid.innerHTML = ''
+  }
+
+  rainbowBtn.onclick = () => makeGrid(currentSize);
+  eraseBtn.onclick = () => reloadGrid();  
+  colorBtn.onchange = (e) => setCurrentColor(e.target.value)

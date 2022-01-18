@@ -18,9 +18,16 @@ nav {
 
 }
 
+#text{
+    flex-grow: 0;
+}
+
 .grid {
     border: black;
+    margin: 3em;
     display: grid;
+    width: 500px;
+    height: 500px;
     }
 
 .grid-elements{
