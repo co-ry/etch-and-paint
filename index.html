@@ -9,33 +9,41 @@
     <title>Paint a Sketch!</title>
 </head>
 <body>
-    <nav class="nav">
-        <form>
-            <label for="grid-size">Select a grid size</label>
-            <select name="grid-size" id="size-options">
-                <option value="16">16 x 16</option>
-                <option value="32">32 x 32</option>
-                <option value="64">64 x 64</option>
-            </select>  
-        </form>
-        <form>
-            <label for="color">Chose a color</label>
-            <input type="color" name="color-choice" id="color-choice">
-        </form>
-        <form>
-            <label for="number">Chose a number</label>
-            <input type="number" min="1" max="64" value="40" id="size-choice">
-        </form>
-
-        <button id="clear-btn" class="btn">Clear Board</button>
-        <button id="rainbow-btn" class="btn">Rainbow Mode</button>
-        <a href="#" class="rainbow-button" alt="Button"></a>
-    </nav>
+    <div id="header">
+        <h1>Paint and Sketch</h1>
+    </div>
     <main class="game-container">
-        <div id= "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi inventore quos, qui perferendis blanditiis, doloribus necessitatibus rem nam distinctio libero unde quas placeat quae fugiat, facilis voluptatem. Architecto ut beatae illo explicabo id est voluptas tenetur doloribus natus fuga, non culpa voluptatibus quis voluptatem delectus! Natus magni quasi, nesciunt fuga temporibus nobis velit quas consequatur voluptate dolorum facere quibusdam vero animi, odit omnis hic doloribus pariatur fugit sunt libero eius. Commodi omnis quos odit magnam esse suscipit laborum libero rerum.</div>
+        <div class="text-container">
+            <div id= "text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia maiores quisquam necessitatibus! Pariatur repellendus atque cupiditate voluptate sed, fuga dolores cumque modi esse dolorum praesentium, amet, quibusdam totam. Quasi, hic sapiente aliquid fuga dolorem numquam inventore est minus in voluptatibus?</div>
+            <div id= "text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia maiores quisquam necessitatibus! Pariatur repellendus atque cupiditate voluptate sed, fuga dolores cumque modi esse dolorum praesentium, amet, quibusdam totam. Quasi, hic sapiente aliquid fuga dolorem numquam inventore est minus in voluptatibus?</div> 
+        </div>
         <div class="grid-square">
             <div id="grid" class="grid"></div>
         </div>
     </main>
+    <nav class="nav">
+        <div class="top-btns">
+            <form>
+                <label for="grid-size">Select a grid size</label>
+                <select name="grid-size" id="size-options">
+                    <option value="hover">Hover to Color</option>
+                    <option value="click">Click and Hold to Color</option>
+                </select>  
+            </form>
+            <form>
+                <label for="color">Chose a color</label>
+                <input type="color" name="color-choice" id="color-choice">
+            </form>
+            <form>
+                <label for="number">Chose a number</label>
+                <input type="number" min="1" max="64" value="40" id="size-choice">
+            </form>   
+        </div>
+        <div class="bottom-btns">
+            <button id="clear-btn" class="btn">Clear Board</button>
+            <button id="rainbow-btn" class="btn">Rainbow Mode</button>
+        </div>
+    </nav>
+
 </body>
 </html>
