@@ -19,14 +19,10 @@ function makeGrid(size) {
         const gridElement = document.createElement('div')
         gridElement.classList.add('grid-elements')
         gridElement.addEventListener('mouseover', changeColor)
-        gameGrid.appendChild(gridElement)
-
-        
-
+        gameGrid.appendChild(gridElement)    
     }
 }
 
-// body.onload = makeGrid(currentSize)
 
 function setCurrentColor(newColor){
   currentColor = newColor
@@ -35,6 +31,18 @@ function setCurrentColor(newColor){
 
 function changeColor(e){
   e.target.style.backgroundColor = currentColor
+// Ok make this work inside this function 
+  function makeRainbow(){
+    r = Math.floor(Math.random() * 256)
+    g = Math.floor(Math.random() * 256)
+    b = Math.floor(Math.random() * 256)
+
+    setCurrentColor(`rgb(${r}, ${g}, ${b})`)
+
+
+
+  }
+
 }
 
 function reloadGrid() {
@@ -45,8 +53,8 @@ function reloadGrid() {
 function clearGrid() {
   gameGrid.innerHTML = ''
   }
-
-  // rainbowBtn.onclick = () => makeGrid(currentSize);
+// This needs to be wired
+  // rainbowBtn.onclick = () => makeRainbow();
   clearBtn.onclick = () => reloadGrid();  
   colorBtn.onchange = (e) => setCurrentColor(e.target.value);
   sizeInput.onchange = (e) => setCurrentSize(e.target.value);
