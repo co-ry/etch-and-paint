@@ -4,7 +4,7 @@ html{
 }
 
 body {
-    background-color: aquamarine;
+    background-color: wheat;
 }
 
 #header{
@@ -55,8 +55,7 @@ nav {
     }
 
 .grid-elements{
-    color: blueviolet;
-    background-color: chartreuse;
+    background-color: white;
     text-align: center;
 
 }
