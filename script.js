@@ -7,8 +7,10 @@ const sizeInput = document.getElementById('size-choice')
 
 const startColor = '#000';
 const startSize = 40;
+const startMode = 'color';
 let currentSize = startSize;
 let currentColor = startColor;
+let currentMode = startMode
 
 
 function makeGrid(size) {
@@ -28,21 +30,28 @@ function setCurrentColor(newColor){
   currentColor = newColor
 }
 
+function setCurrentMode(newMode){
+  currentMode = newMode
+}
+
+function makeRainbow(){
+
+}
+
+
 
 function changeColor(e){
-  e.target.style.backgroundColor = currentColor
-// Ok make this work inside this function 
-  function makeRainbow(){
+  if (currentMode === 'color') {
+    e.target.style.backgroundColor = currentColor
+  }
+  else if(currentMode === 'rainbow') {
     r = Math.floor(Math.random() * 256)
     g = Math.floor(Math.random() * 256)
     b = Math.floor(Math.random() * 256)
-
+  
     setCurrentColor(`rgb(${r}, ${g}, ${b})`)
-
-
-
+    e.target.style.backgroundColor = currentColor  
   }
-
 }
 
 function reloadGrid() {
@@ -53,10 +62,13 @@ function reloadGrid() {
 function clearGrid() {
   gameGrid.innerHTML = ''
   }
-// This needs to be wired
-  // rainbowBtn.onclick = () => makeRainbow();
+
+  rainbowBtn.onclick = () => setCurrentMode('rainbow');
   clearBtn.onclick = () => reloadGrid();  
-  colorBtn.onchange = (e) => setCurrentColor(e.target.value);
+  colorBtn.onchange = (e) => {
+    setCurrentMode('color')
+    setCurrentColor(e.target.value)
+  };
   sizeInput.onchange = (e) => setCurrentSize(e.target.value);
   window.onload = () => makeGrid(startSize);
 
